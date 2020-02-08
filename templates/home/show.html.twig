@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title article.title %}
+
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+
+                </div>
+                <div class="col-md-4">
+                    <h1>{{ article.title }}</h1>
+                    <div class="text-primary" style="font-size: 8rem;font-weight: bold;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="text-primary" style="font-size: 2rem;font-weight: bold;">
+            <p>
+                {{ article.title | nl2br }}
+            </p>
+        </div>
+        <div>Publier le : {{ article.publishDate | date("d/m/Y", "Europe/Paris")}}</div>
+        <br>
+        <div class="row">
+            <div class="col-md-8">
+               <p>{{ article.contente }}</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Categories</h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

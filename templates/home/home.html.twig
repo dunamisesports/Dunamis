@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Agence lorem ipsum' %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+        <h1>Agence lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut cumque dolore error expedita itaque iure iusto magni, molestiae numquam omnis provident quae repellat sint soluta tempora unde voluptate voluptatibus.</p>
+    </div>
+
+    <div class="container">
+        <h2>Les derniers artiles</h2>
+        <div class="row flex">
+            {% for article in articles %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ path('article.show', {id: article.id, slug: article.slug}) }}">{{ article.title }}</a>
+                            </h5>
+                            <p class="card-text">{{ article.title }} ({{ article.contente }})</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
