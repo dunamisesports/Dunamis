@@ -40,6 +40,8 @@
         <div class="text-right">
             <a href="{{ path('admin.article.new') }}" class="btn btn-primary">Créer un nouveau bien</a>
         </div>
-
+        <div class="pagination">
+            {{ knp_pagination_render(articles) }}
+        </div>
     </div>
 {% endblock %}

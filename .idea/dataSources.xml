@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="dunamis@localhost" uuid="0723b70b-b218-4cd0-8aab-155b06000305">
-      <driver-ref>mysql.8</driver-ref>
+    <data-source source="LOCAL" name="MySQL for 5.1 - dunamis@localhost" uuid="0723b70b-b218-4cd0-8aab-155b06000305">
+      <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <remarks>DunamisEsport</remarks>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/dunamis</jdbc-url>
     </data-source>
   </component>

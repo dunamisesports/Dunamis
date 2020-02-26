@@ -18,6 +18,7 @@ class HomeController extends AbstractController
         $articles = $repository->findLastArticle();
         return $this->render('home/home.html.twig', [
             'articles'      => $articles,
+            'home'          => '/',
         ]);
     }
 }

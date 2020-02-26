@@ -5,17 +5,19 @@ namespace App\DataFixtures;
 use App\Entity\Article;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Faker\Factory;
 
 class ArticleFixture extends Fixture
 {
     public  function load(ObjectManager $manager)
     {
-        for($i = 0; $i < 20; $i++)
+        $faker = Factory::create('fr_FR');
+        for($i = 0; $i < 150; $i++)
         {
             $article = new Article();
             $article
-                ->setTitle('La premiere article')
-                ->setContente("As I commented in the introduction of the article, DoctrineFixturesBundle allows the insertion of test data into our database in order to perform tests or other actions")
+                ->setTitle($faker->words(10, true))
+                ->setContente($faker->sentences(10, true))
                 ->setPublish(false);
             $manager->persist($article);
         }

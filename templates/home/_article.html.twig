@@ -1,0 +1,4 @@
+<div>
+    Publier le : {{ article.publishDate | date("d/m/Y", "Europe/Paris")}}
+    <h3><a href="{{ path('article.show', {id: article.id, slug: article.slug}) }}">{{ article.title }}</a></h3>
+</div>

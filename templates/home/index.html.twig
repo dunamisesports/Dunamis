@@ -1,4 +1,4 @@
-{% extends 'baseAdmin.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}{% endblock %}
 {% block body %}
@@ -16,7 +16,12 @@
         }
     </style>
     <div class="example-wrapper">
-        <h1>Création de Joueur de Moin 16 ans</h1>
-
+        <h1>Tous Les Articles</h1>
+        {% for article in articles %}
+            {% include "home/_article.html.twig" %}
+        {% endfor %}
+        <div class="pagination">
+            {{ knp_pagination_render(articles) }}
+        </div>
     </div>
 {% endblock %}
