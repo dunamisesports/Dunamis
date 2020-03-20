@@ -76,6 +76,7 @@ class AdminArticleController extends AbstractController
      * @param Article $article
      * @param Request $request
      * @return Response
+     * @throws \Exception
      */
     public function edit(Article $article, Request $request): Response
     {

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Se connecter' %}
+
+{% block body %}
+    <div class="container mt-4">
+
+        {% if error %}
+            <div class="alert alert-danger ">
+                {{ error.messageKey | trans(error.messagedata, 'security') }}
+            </div>
+        {% endif %}
+
+        <form class="col-sm-6 col-sm-offset-3" action="{{ path('login') }}" method="post">
+            <div class="form-group">
+                <label for="username">Votre email</label>
+                <input type="text" id="username" name="_username" class="form-control" value="{{ last_username }}">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="_password" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+        </form>
+        <br>
+        <div>
+            <span>
+                <a href="{{ path('user.register') }}">Vous inscrire</a>
+            </span>
+        </div>
+    </div>
+{% endblock %}

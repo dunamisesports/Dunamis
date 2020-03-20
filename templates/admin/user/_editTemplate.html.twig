@@ -1,0 +1,35 @@
+{{ form_start(form, {'attr':{'class': 'col-sm-12 col-sm-offset-3'}}) }}
+    {{ form_errors(form) }}
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            {{ form_label(form.name, 'Nom') }}
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name, {'attr': {'class': 'form-control', 'id': 'name'}}) }}
+            <span id="nomVide"></span>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            {{ form_label(form.firstName, 'Prénom') }}
+            {{ form_errors(form.firstName) }}
+            {{ form_widget(form.firstName, {'attr': {'class': 'form-control', 'id': 'firstName'}}) }}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            {{ form_label(form.email, 'Email') }}
+            {{ form_errors(form.email) }}
+            {{ form_widget(form.email, {'attr': {'class': 'form-control', 'id': 'email'}}) }}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            {{ form_label(form.roles, 'Permission') }}
+            {{ form_errors(form.roles) }}
+            {{ form_widget(form.roles, {'attr': {'class': 'form-control', 'id': 'roles'}}) }}
+        </div>
+    </div>
+    {{ form_rest(form) }}
+    <button class="btn btn-primary">{{ button|default('Enregistrer') }}</button>
+{{ form_end(form) }}
