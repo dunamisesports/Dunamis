@@ -68,6 +68,27 @@ class UserController extends AbstractController
     }
 
     /**
+     * @Route("/user/validate/{id}", name="user.validate")
+     * @param User $user
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function validatUser(User $user, Request $request)
+    {
+        if($user->getValidate() == null)
+        {
+            $user->setValidate(true);
+
+            $this->em->flush();
+
+            return $this->redirectToRoute('user.information',
+                [
+                    'id'      => $user->getId(),
+                ]);
+        }
+    }
+
+    /**
      * @Route("modifier/{id}", name="user.edit", methods="GET|POST")
      * @param User $user
      * @param Request $request
@@ -87,6 +108,18 @@ class UserController extends AbstractController
             [
                 'form'      => $form->createView(),
                 'user'      => $user,
+            ]);
+    }
+
+    /**
+     * @Route("user/information/{id}", name="user.information")
+     * @param User $user
+     */
+    public function informationUser(User $user): Response
+    {
+        return $this->render('user/information.html.twig',
+            [
+                'user'      => $user
             ]);
     }
 }

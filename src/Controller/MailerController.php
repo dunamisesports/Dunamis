@@ -46,5 +46,10 @@ class MailerController extends AbstractController
                 'username'  => $user
             ]);
         $mailer->send($email);
+
+        return $this->render('mailer/message.html.twig',
+            [
+                'user'      => $user
+            ]);
     }
 }

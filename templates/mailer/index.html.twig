@@ -10,15 +10,15 @@
 
 <div class="example-wrapper">
 
-    <h1>Welcome {{ username.name}}!</h1>
+    <h1>Bonjour {{ username.name}}!</h1>
 
     <p>
-        bonjou {{ username.name }} the following email:
+        bonjou {{ username.name }}:
     </p>
     <p><code>{{ email.to[0].address }}</code></p>
 
     <p>
-        <a href="#">Click here to activate your account</a>
+        <a href="{{ path('user.validate', {'id': username.id}) }}">Click here to activate your account</a>
     </p>
 </div>
 {% endblock %}
